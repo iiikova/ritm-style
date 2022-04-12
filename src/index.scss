@@ -1,0 +1,317 @@
+body {
+  margin: 0;
+  font-family: "El Messiri";
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+button {
+  background-color: #018abe;
+  color: #fff;
+  width: 155px;
+  height: 36px;
+  border: none;
+  border-radius: 3px;
+}
+
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+  height: 100%;
+  color: #fff;
+}
+.outer {
+  padding: 50px 0;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 0.1;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 140%;
+  padding-bottom: 20px;
+  span {
+    margin: 0 45px;
+    width: 28px;
+    height: 14px;
+    background: #018abe;
+  }
+  span:nth-child(1) {
+    border-radius: 0px 50px;
+  }
+  span:nth-child(2) {
+    border-radius: 50px 0px;
+  }
+}
+
+/* FIRST SCREEN */
+/* NAVBAR */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  .logo img {
+    height: 60px;
+    width: 60px;
+  }
+  .navbar {
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+/* MAIN SCREEN */
+.first-screen {
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 100%;
+  background: url("./assets/images/main.png");
+  background-repeat: no-repeat;
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+  }
+  span {
+    margin: 0 45px;
+    width: 28px;
+    height: 14px;
+    background: #fff;
+  }
+  p span:nth-child(1) {
+    border-radius: 0px 50px;
+  }
+  p span:nth-child(2) {
+    border-radius: 50px 0px;
+  }
+  h1 {
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+  }
+}
+
+// SERVICE
+.service {
+  display: grid;
+  height: 540px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  .service-item {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .service-item p {
+    margin: 0;
+    padding: 40px;
+  }
+  .service-item:nth-child(1) {
+    background-image: url("./assets/images/ss-big.png");
+    grid-row: 1 / 3;
+  }
+  .service-item:nth-child(2) {
+    background: url("./assets/images/ss-small.png");
+  }
+  .service-item:nth-child(3) {
+    background: url("./assets/images/ss-small.png");
+  }
+  .service-item:nth-child(4) {
+    background: url("./assets/images/ss-small.png");
+  }
+  .service-item:nth-child(5) {
+    background: url("./assets/images/ss-small.png");
+  }
+}
+
+/* REVIEWS */
+.reviews {
+  .swiper {
+    height: 400px;
+  }
+  .swiper-slide {
+    background: #018abe;
+    border-radius: 10px;
+    color: #fff;
+    height: 276px;
+    overflow: hidden;
+    opacity: 0.3;
+    div {
+      padding: 10px;
+    }
+  }
+  .swiper-slide-active {
+    opacity: 1;
+    height: 350px;
+  }
+  .swiper-pagination-bullet {
+    background-color: #fff;
+  }
+}
+
+/* ABOUT */
+.about {
+  width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  h3 {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+  }
+  p {
+    font-family: "Proxima Nova";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .item {
+    height: 365px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .item:nth-child(2) {
+    background: url("./assets/images/Recta.png");
+  }
+  .item:nth-child(3) {
+    background: url("./assets/images/Recta.png");
+  }
+}
+
+/* PRICE */
+.price {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 5rem;
+  width: 1024px;
+  margin: 0 auto;
+  .item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        display: flex;
+        align-items: center;
+        span {
+          margin: 0 20px;
+          width: 18px;
+          height: 9px;
+          background: #018abe;
+          border-radius: 0px 50px;
+        }
+      }
+    }
+    .image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 396px;
+      background: url("./assets/images/gif.png");
+      border: none;
+      border-radius: 3px;
+    }
+  }
+}
+
+/* CONTACTS */
+.contacts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 1024px;
+  .item {
+    background: #018abe;
+    border-radius: 10px;
+    padding: 20px;
+    h3 {
+      font-family: "El Messiri";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 140%;
+    }
+    p {
+      display: flex;
+      align-items: center;
+      font-family: "Proxima Nova";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 135%;
+      .icon {
+        margin-right: 10px;
+      }
+    }
+    button {
+      background: #ffffff;
+      border-radius: 3px;
+      color: #018abe;
+    }
+  }
+  .item:nth-child(1) {
+    background: url("./assets/images/map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-row: 1/3;
+  }
+}
+
+/* FOOTER */
+.footer {
+  margin: 0 auto;
+  width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  p a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
