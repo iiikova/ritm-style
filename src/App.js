@@ -42,7 +42,7 @@ function App() {
       </div>
 
       {/* SERVICES*/}
-      <div className="container outer">
+      <div className="container ">
         <h2>
           <span></span> Sessions RitmStyle <span></span>
         </h2>
@@ -252,12 +252,12 @@ function App() {
       </div>
 
       {/* ABOUT */}
-      <div className="container outer">
+      <div className="container ">
         <h2>
           <span></span> About RitmStyle<span></span>{" "}
         </h2>
 
-        <div className="about">
+        <div className=" about">
           <div className="item">
             <h3>RitmStyle massage </h3>
             <p>
@@ -302,7 +302,7 @@ function App() {
       </div>
 
       {/* PRICE */}
-      <div className="container outer">
+      <div className="container ">
         <h2>
           <span></span> Session cost<span></span>{" "}
         </h2>
@@ -353,7 +353,7 @@ function App() {
       </div>
 
       {/* CONTACTS */}
-      <div className="container outer">
+      <div className="container ">
         <div className="contacts">
           <div className="item">{/* MAP */}</div>
           <div className="item">
@@ -392,7 +392,7 @@ function App() {
       </div>
 
       {/* FOOTER */}
-      <div className="container outer">
+      <div className="container ">
         <div className="footer">
           <p>© 2018-2022 RitmStyle</p>
           <p>

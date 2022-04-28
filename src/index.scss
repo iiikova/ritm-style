@@ -3,11 +3,6 @@ body {
   font-family: "El Messiri";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 button {
   background-color: #018abe;
   color: #fff;
@@ -23,13 +18,26 @@ button {
   height: 100%;
   color: #fff;
 }
+
+@media (max-width: 576px) {
+  .container {
+    margin: 0 1rem;
+  }
+}
 .outer {
-  padding: 50px 0;
+  // padding: 50px 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 h1 {
   font-size: 64px;
   line-height: 0.1;
+  text-align: center;
 }
 h2 {
   display: flex;
@@ -40,7 +48,7 @@ h2 {
   font-weight: 700;
   font-size: 42px;
   line-height: 140%;
-  padding-bottom: 20px;
+  text-align: center;
   span {
     margin: 0 45px;
     width: 28px;
@@ -76,10 +84,14 @@ h2 {
     }
   }
 }
+@media (max-width: 576px) {
+  .navbar {
+    display: none;
+  }
+}
 
 /* MAIN SCREEN */
 .first-screen {
-  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,6 +100,8 @@ h2 {
   width: 100%;
   background: url("./assets/images/main.png");
   background-repeat: no-repeat;
+  text-align: center;
+
   p {
     display: flex;
     justify-content: center;
@@ -154,6 +168,12 @@ h2 {
     background: url("./assets/images/ss-small.png");
   }
 }
+@media (max-width: 576px) {
+  .service {
+    grid-template-columns: 1fr;
+    height: 600px;
+  }
+}
 
 /* REVIEWS */
 .reviews {
@@ -182,7 +202,6 @@ h2 {
 
 /* ABOUT */
 .about {
-  width: 1024px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -217,6 +236,19 @@ h2 {
   .item:nth-child(3) {
     background: url("./assets/images/Recta.png");
   }
+  @media (max-width: 576px) {
+    .item {
+      height: 439px;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .item:nth-child(3) {
+    order: 1;
+  }
 }
 
 /* PRICE */
@@ -225,7 +257,6 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 5rem;
-  width: 1024px;
   margin: 0 auto;
   .item {
     display: flex;
@@ -239,7 +270,7 @@ h2 {
         display: flex;
         align-items: center;
         span {
-          margin: 0 20px;
+          margin: 0 20px 0 0;
           width: 18px;
           height: 9px;
           background: #018abe;
@@ -258,6 +289,11 @@ h2 {
     }
   }
 }
+@media (max-width: 576px) {
+  .price {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* CONTACTS */
 .contacts {
@@ -265,7 +301,6 @@ h2 {
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
   margin: 0 auto;
-  width: 1024px;
   .item {
     background: #018abe;
     border-radius: 10px;
@@ -300,18 +335,28 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
     grid-row: 1/3;
+    height: 400px;
+  }
+}
+@media (max-width: 576px) {
+  .contacts {
+    grid-template-columns: 1fr;
   }
 }
 
 /* FOOTER */
 .footer {
   margin: 0 auto;
-  width: 1024px;
   display: flex;
   justify-content: space-between;
   padding: 0;
   p a {
     color: #fff;
     text-decoration: none;
+  }
+}
+@media (max-width: 576px) {
+  .contacts {
+    grid-template-columns: 1fr;
   }
 }
