@@ -1,18 +1,6 @@
 body {
-  background-color: #162931;;
+  background-color: #162931;
 }
 
 .App {
 }
-
-.img 
-{
-  object-fit: contain;
-   height: 200px;
-   width: 100%;
-}
-/* .img img {
-  object-fit: contain;
-   height: 200px;
-   width: 100%;
- } */

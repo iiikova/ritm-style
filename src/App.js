@@ -5,14 +5,36 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/scss/pagination";
 import "swiper/css/scrollbar";
 import { Pagination, Navigation } from "swiper";
 
+import { useState } from "react";
+
 function App() {
+  const [menu, setMenu] = useState(false);
+
+  const isToggleMenu = () => {
+    setMenu(true);
+  };
+
   return (
-    <div className="App">
+    <div className="App container">
+      {/* <div className={menu ? "hamb_menu" : false}>
+        <ul>
+          <li>Main</li>
+          <li>Services</li>
+          <li>Review</li>
+          <li>Contacts</li>
+          <li>News</li>
+          <li>About me</li>
+          <li>Blog</li>
+        </ul>
+        <div onClick={() => setMenu(false)}>close</div>
+      </div> */}
+
       {/* MAIN N NAV */}
-      <div className="container ">
+      <div>
         <div className="main-header">
           <div className="logo">
             <img src={require("./assets/images/logo.png")} alt="" />
@@ -31,6 +53,9 @@ function App() {
           <div>
             <button>Sign up for a session</button>
           </div>
+          <div className='namb_icon' onClick={() => setMenu(true)}>
+            <span class="material-symbols-outlined">menu</span>
+          </div>
         </div>
         <div className="first-screen">
           <p>
@@ -42,7 +67,7 @@ function App() {
       </div>
 
       {/* SERVICES*/}
-      <div className="container ">
+      <div>
         <h2>
           <span></span> Sessions RitmStyle <span></span>
         </h2>
@@ -65,8 +90,8 @@ function App() {
         </div>
       </div>
 
-      {/* REVIEWS */}
-      <div className="container ">
+      {/* REVIEWS (slider)*/}
+      <div>
         <h2>
           <span></span>
           Reviews
@@ -75,16 +100,31 @@ function App() {
         <div className="reviews">
           <Swiper
             grabCursor={true}
-            slidesPerView={3}
-            centeredSlides={true}
-            spaceBetween={25}
-            slidesPerGroup={1}
             loop={true}
             loopFillGroupWithBlank={true}
+            breakpoints={{
+              960: {
+                centeredSlides: true,
+                slidesPerView: 3,
+                spaceBetween: 15,
+              },
+
+              768: {
+                centeredSlides: false,
+
+                slidesPerView: 2,
+                spaceBetween: 15,
+              },
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 2,
+              },
+            }}
             pagination={{
               clickable: true,
+              // el: `swiper-container`,
+              // bulletClass: `swiper-pagination-bullet`,
             }}
-            // navigation={true}
             modules={[Pagination, Navigation]}
           >
             <SwiperSlide>
@@ -92,37 +132,36 @@ function App() {
                 <h3>Oleksandr Dmitry</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Consectetur nulla viverra egestas tellus. Cursus scelerisque
-                  phasellus netus proin. Etiam mauris maecenas facilisis
-                  faucibus mauris eleifend purus. Purus dictum vulputate
-                  elementum mauris amet. Hendrerit sit cras ullamcorper morbi
-                  quam vitae ante nibh. Ornare ipsum mi nisl augue placerat
-                  lacus. Dolor ipsum fermentum viverra bibendum faucibus urna.
-                  Arcu, ut sed tellus lacus quisque diam. Semper sed aenean in
-                  etiam mus praesent diam semper in. Pretium id a amet, massa
-                  ligula nibh faucibus ornare. Ut aenean rhoncus sed nam ut diam
-                  dapibus. Risus nibh faucibus eu vestibulum tempor, quis
-                  ultrices mauris. Porta enim, donec odio sagittis, eget velit
-                  at.{" "}
+                  Lacinia eget mattis orci aliquam enim tincidunt gravida
+                  aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt.
+                  Pretium dictum odio feugiat auctor diam sit viverra gravida.
+                  Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac.
+                  Cursus diam turpis iaculis nisi sit. Vel blandit et sit elit
+                  vestibulum feugiat proin tempor, justo. Diam commodo,
+                  pellentesque at porttitor tristique faucibus faucibus morbi.
+                  Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem
+                  erat ullamcorper donec egestas neque. Maecenas malesuada
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
-            <SwiperSlide active>
+            <SwiperSlide>
               <div>
                 <h3>Kira Ivanivna</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus
-                  diam risus morbi nulla dictum. Urna mi orci gravida placerat
-                  amet, eu, aliquet facilisis aliquet. Dolor praesent nam ornare
-                  fringilla enim nibh donec sit imperdiet. Amet, diam duis eu
-                  sit et. Volutpat vestibulum a lectus sed blandit. Venenatis
-                  urna mattis eu enim molestie iaculis et aliquet. Velit in
-                  pellentesque vestibulum phasellus orci. Fermentum sed
-                  phasellus aliquam nulla non aenean. Quisque id nunc, mauris
-                  potenti a massa. Fermentum at elit, convallis leo dolor
-                  aliquet id elementum. Ullamcorper sociis et cum bibendum in
-                  egestas. Diam, urna, sed tempus mollis aliquam elit. Facilisi
-                  nam nulla pulvinar mauris vel lacinia venenatis.{" "}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Lacinia eget mattis orci aliquam enim tincidunt gravida
+                  aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt.
+                  Pretium dictum odio feugiat auctor diam sit viverra gravida.
+                  Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac.
+                  Cursus diam turpis iaculis nisi sit. Vel blandit et sit elit
+                  vestibulum feugiat proin tempor, justo. Diam commodo,
+                  pellentesque at porttitor tristique faucibus faucibus morbi.
+                  Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem
+                  erat ullamcorper donec egestas neque. Maecenas malesuada
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
@@ -141,9 +180,7 @@ function App() {
                   Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
                   Tortor fermentum orci neque sed. Mauris faucibus diam lorem
                   erat ullamcorper donec egestas neque. Maecenas malesuada
-                  mauris magnis sed id. Luctus vitae justo, in consectetur arcu.
-                  Nulla feugiat at eu in aliquet. Diam nunc, libero mauris
-                  tellus suspendisse morbi sagittis semper.{" "}
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
@@ -152,18 +189,17 @@ function App() {
                 <h3>Oleksandr Dmitry</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Consectetur nulla viverra egestas tellus. Cursus scelerisque
-                  phasellus netus proin. Etiam mauris maecenas facilisis
-                  faucibus mauris eleifend purus. Purus dictum vulputate
-                  elementum mauris amet. Hendrerit sit cras ullamcorper morbi
-                  quam vitae ante nibh. Ornare ipsum mi nisl augue placerat
-                  lacus. Dolor ipsum fermentum viverra bibendum faucibus urna.
-                  Arcu, ut sed tellus lacus quisque diam. Semper sed aenean in
-                  etiam mus praesent diam semper in. Pretium id a amet, massa
-                  ligula nibh faucibus ornare. Ut aenean rhoncus sed nam ut diam
-                  dapibus. Risus nibh faucibus eu vestibulum tempor, quis
-                  ultrices mauris. Porta enim, donec odio sagittis, eget velit
-                  at.{" "}
+                  Lacinia eget mattis orci aliquam enim tincidunt gravida
+                  aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt.
+                  Pretium dictum odio feugiat auctor diam sit viverra gravida.
+                  Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac.
+                  Cursus diam turpis iaculis nisi sit. Vel blandit et sit elit
+                  vestibulum feugiat proin tempor, justo. Diam commodo,
+                  pellentesque at porttitor tristique faucibus faucibus morbi.
+                  Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem
+                  erat ullamcorper donec egestas neque. Maecenas malesuada
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
@@ -172,18 +208,17 @@ function App() {
                 <h3>Oleksandr Dmitry</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Consectetur nulla viverra egestas tellus. Cursus scelerisque
-                  phasellus netus proin. Etiam mauris maecenas facilisis
-                  faucibus mauris eleifend purus. Purus dictum vulputate
-                  elementum mauris amet. Hendrerit sit cras ullamcorper morbi
-                  quam vitae ante nibh. Ornare ipsum mi nisl augue placerat
-                  lacus. Dolor ipsum fermentum viverra bibendum faucibus urna.
-                  Arcu, ut sed tellus lacus quisque diam. Semper sed aenean in
-                  etiam mus praesent diam semper in. Pretium id a amet, massa
-                  ligula nibh faucibus ornare. Ut aenean rhoncus sed nam ut diam
-                  dapibus. Risus nibh faucibus eu vestibulum tempor, quis
-                  ultrices mauris. Porta enim, donec odio sagittis, eget velit
-                  at.{" "}
+                  Lacinia eget mattis orci aliquam enim tincidunt gravida
+                  aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt.
+                  Pretium dictum odio feugiat auctor diam sit viverra gravida.
+                  Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac.
+                  Cursus diam turpis iaculis nisi sit. Vel blandit et sit elit
+                  vestibulum feugiat proin tempor, justo. Diam commodo,
+                  pellentesque at porttitor tristique faucibus faucibus morbi.
+                  Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem
+                  erat ullamcorper donec egestas neque. Maecenas malesuada
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
@@ -191,18 +226,18 @@ function App() {
               <div>
                 <h3>Kira Ivanivna</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Netus
-                  diam risus morbi nulla dictum. Urna mi orci gravida placerat
-                  amet, eu, aliquet facilisis aliquet. Dolor praesent nam ornare
-                  fringilla enim nibh donec sit imperdiet. Amet, diam duis eu
-                  sit et. Volutpat vestibulum a lectus sed blandit. Venenatis
-                  urna mattis eu enim molestie iaculis et aliquet. Velit in
-                  pellentesque vestibulum phasellus orci. Fermentum sed
-                  phasellus aliquam nulla non aenean. Quisque id nunc, mauris
-                  potenti a massa. Fermentum at elit, convallis leo dolor
-                  aliquet id elementum. Ullamcorper sociis et cum bibendum in
-                  egestas. Diam, urna, sed tempus mollis aliquam elit. Facilisi
-                  nam nulla pulvinar mauris vel lacinia venenatis.{" "}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Lacinia eget mattis orci aliquam enim tincidunt gravida
+                  aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt.
+                  Pretium dictum odio feugiat auctor diam sit viverra gravida.
+                  Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac.
+                  Cursus diam turpis iaculis nisi sit. Vel blandit et sit elit
+                  vestibulum feugiat proin tempor, justo. Diam commodo,
+                  pellentesque at porttitor tristique faucibus faucibus morbi.
+                  Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem
+                  erat ullamcorper donec egestas neque. Maecenas malesuada
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
@@ -221,9 +256,7 @@ function App() {
                   Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
                   Tortor fermentum orci neque sed. Mauris faucibus diam lorem
                   erat ullamcorper donec egestas neque. Maecenas malesuada
-                  mauris magnis sed id. Luctus vitae justo, in consectetur arcu.
-                  Nulla feugiat at eu in aliquet. Diam nunc, libero mauris
-                  tellus suspendisse morbi sagittis semper.{" "}
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
@@ -232,18 +265,17 @@ function App() {
                 <h3>Oleksandr Dmitry</h3>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Consectetur nulla viverra egestas tellus. Cursus scelerisque
-                  phasellus netus proin. Etiam mauris maecenas facilisis
-                  faucibus mauris eleifend purus. Purus dictum vulputate
-                  elementum mauris amet. Hendrerit sit cras ullamcorper morbi
-                  quam vitae ante nibh. Ornare ipsum mi nisl augue placerat
-                  lacus. Dolor ipsum fermentum viverra bibendum faucibus urna.
-                  Arcu, ut sed tellus lacus quisque diam. Semper sed aenean in
-                  etiam mus praesent diam semper in. Pretium id a amet, massa
-                  ligula nibh faucibus ornare. Ut aenean rhoncus sed nam ut diam
-                  dapibus. Risus nibh faucibus eu vestibulum tempor, quis
-                  ultrices mauris. Porta enim, donec odio sagittis, eget velit
-                  at.{" "}
+                  Lacinia eget mattis orci aliquam enim tincidunt gravida
+                  aliquet ut. Ipsum vulputate morbi felis, lobortis tincidunt.
+                  Pretium dictum odio feugiat auctor diam sit viverra gravida.
+                  Lobortis arcu rhoncus, mi mi vitae feugiat amet, vitae ac.
+                  Cursus diam turpis iaculis nisi sit. Vel blandit et sit elit
+                  vestibulum feugiat proin tempor, justo. Diam commodo,
+                  pellentesque at porttitor tristique faucibus faucibus morbi.
+                  Bibendum pretium lacus, tempus viverra vitae odio nunc eget.
+                  Tortor fermentum orci neque sed. Mauris faucibus diam lorem
+                  erat ullamcorper donec egestas neque. Maecenas malesuada
+                  mauris
                 </p>
               </div>
             </SwiperSlide>
@@ -252,9 +284,9 @@ function App() {
       </div>
 
       {/* ABOUT */}
-      <div className="container ">
+      <div>
         <h2>
-          <span></span> About RitmStyle<span></span>{" "}
+          <span></span> About RitmStyle<span></span>
         </h2>
 
         <div className=" about">
@@ -302,7 +334,7 @@ function App() {
       </div>
 
       {/* PRICE */}
-      <div className="container ">
+      <div>
         <h2>
           <span></span> Session cost<span></span>{" "}
         </h2>
@@ -353,7 +385,7 @@ function App() {
       </div>
 
       {/* CONTACTS */}
-      <div className="container ">
+      <div>
         <div className="contacts">
           <div className="item">{/* MAP */}</div>
           <div className="item">
@@ -392,7 +424,7 @@ function App() {
       </div>
 
       {/* FOOTER */}
-      <div className="container ">
+      <div>
         <div className="footer">
           <p>© 2018-2022 RitmStyle</p>
           <p>
